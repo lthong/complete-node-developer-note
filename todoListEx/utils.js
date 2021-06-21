@@ -27,6 +27,19 @@ const addTodo = (newTodo) => {
   }
 };
 
+const removeTodo = (todo) => {
+  const list = loadList();
+  const isTodoExisted = list.includes(todo);
+  if (isTodoExisted) {
+    const newList = list.filter((item) => item !== todo);
+    updateList(newList);
+    console.log(chalk.green.inverse('The todo removed!'));
+  } else {
+    console.log(chalk.red.inverse('No todo removed!'));
+  }
+};
+
 module.exports = {
   addTodo,
+  removeTodo,
 };
