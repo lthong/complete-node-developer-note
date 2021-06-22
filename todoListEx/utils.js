@@ -39,7 +39,20 @@ const removeTodo = (todo) => {
   }
 };
 
+const readTodoList = () => {
+  const list = loadList();
+  if (!list.length) {
+    console.log(chalk.yellow.inverse('No todo in here!'));
+    return;
+  }
+  console.log(chalk.inverse('Todo list...'));
+  list.forEach((item) => {
+    console.log(chalk.greenBright.inverse(item));
+  });
+};
+
 module.exports = {
   addTodo,
   removeTodo,
+  readTodoList,
 };
