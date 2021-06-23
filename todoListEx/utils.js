@@ -51,8 +51,14 @@ const readTodoList = () => {
   });
 };
 
+const removeAllTodo = () => {
+  updateList([]);
+  console.log(chalk.green.inverse('All todo removed!'));
+};
+
 module.exports = {
   addTodo,
   removeTodo,
+  removeAllTodo,
   readTodoList,
 };
