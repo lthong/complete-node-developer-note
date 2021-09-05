@@ -23,6 +23,6 @@ app.get('', (request, response) => {
 });
 
 // app.listen() 可以將伺服器啟動在指定的 port#
-app.listen('3030', () => {
+app.listen('3010', () => {
   console.log('Server is up on port 3030!');
 });
