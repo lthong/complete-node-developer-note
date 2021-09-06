@@ -14,7 +14,12 @@ const staticFilesPath = path.resolve(__dirname, './public');
 // https://expressjs.com/zh-tw/starter/static-files.html
 app.use(express.static(staticFilesPath));
 
+// 下行設定會因為「app.use(express.static(staticFilesPath))」而失效
+// app.get('', (req, res) => {
+//   res.send('hihi');
+// });
+
 // app.listen() 可以將伺服器啟動在指定的 port#
-app.listen('3030', () => {
+app.listen('3020', () => {
   console.log('Server is up on port 3030!');
 });
