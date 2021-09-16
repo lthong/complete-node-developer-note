@@ -1,1 +1,1 @@
-document.getElementById('content').style.color = 'blue';
+document.getElementById('content').innerText = '...';
