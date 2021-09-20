@@ -21,5 +21,5 @@ app.use(express.static(staticFilesPath));
 
 // app.listen() 可以將伺服器啟動在指定的 port#
 app.listen('3020', () => {
-  console.log('Server is up on port 3030!');
+  console.log('Server is up on port 3020!');
 });
