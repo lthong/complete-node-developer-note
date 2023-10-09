@@ -1,4 +1,4 @@
-// yargs.command() 可以把輸入的參數定義為一個個指令，
+// yargs.command() 可以把輸入的參數定義為一個個指令，「node [js檔名] [指令1]」比如「node command add」
 // 每個指令都可以有各自專屬的參數(builder object)
 // 可以設定輸入指令後要執行的程式(handler func, 如果有輸入參數則會順便帶入)，範例如下
 // https://github.com/yargs/yargs/blob/master/docs/api.md#commandmodule
@@ -6,6 +6,7 @@
 
 const yargs = require('yargs');
 
+// 指令「node command add --title=xxx --body=ooo」寫法一
 yargs.command({
   // command 為指令名稱
   command: 'add',
@@ -38,6 +39,7 @@ yargs.command({
 }).argv;
 
 // ====================================================================
+// 指令「node command add --title=xxx --body=ooo」寫法二（需要先把寫法一註解起來才會生效）
 // 官網用法：
 yargs.command(
   // command name
@@ -80,7 +82,7 @@ yargs.command(
 ).argv;
 
 // =====================================================
-// 在終端機執行此指令 $ node index --help ，會得到以下輸出
+// 在終端機執行此指令 $ node command --help ，會得到以下輸出
 // 命令：
 //   index add  add a note
 

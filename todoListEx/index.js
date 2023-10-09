@@ -5,10 +5,12 @@ const yargs = require('yargs');
 const { addTodo, removeTodo, removeAllTodo, readTodoList } = require('./utils');
 
 yargs
+  // ex, node index add --todo=買東西
   .command(
     'add',
     'add a todo',
     {
+      // todo參數定義（必傳且為自動轉型成字串）
       todo: {
         describe: 'todo title',
         demandOption: true,
@@ -19,10 +21,12 @@ yargs
       addTodo(todo);
     }
   )
+  // ex, node index remove --todo=買東西
   .command(
     'remove',
     'remove a todo',
     {
+      // todo參數定義（必傳且為自動轉型成字串）
       todo: {
         describe: 'todo title',
         demandOption: true,
@@ -33,9 +37,11 @@ yargs
       removeTodo(todo);
     }
   )
+  // ex, node index read
   .command('read', 'read the todo list', {}, () => {
     readTodoList();
   })
+  // ex, node index removeAll
   .command('removeAll', 'remove all todo', {}, () => {
     removeAllTodo();
   }).argv;
